@@ -1,0 +1,22 @@
+cd hospital
+
+# 1. PHP dependencies
+composer install
+
+# 2. .env সেটআপ (নিচে গুরুত্বপূর্ণ নোট দেখুন)
+cp .env.example .env
+php artisan key:generate
+
+# 3. MySQL-এ ডাটাবেজ বানান (আগে থেকে exist করে না, migrate নিজে বানায় না)
+#    .env-এ DB_DATABASE=hospital_pro আছে, সেই নামে বানাতে হবে
+
+# 4. Migration + Seed (দুটোই লাগবে!)
+php artisan migrate
+php artisan db:seed
+
+# 5. Storage link (ছাড়া Documents ফিচারের uploaded ফাইল 404 দেবে)
+php artisan storage:link
+
+# 6. Frontend
+npm install
+npm run build
