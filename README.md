@@ -1,4 +1,4 @@
-0<div align="center">
+<div align="center">
 
 <img src="readmeimage/01-homepage.png" alt="MediCare Hospital — Homepage" width="100%" />
 
